@@ -4,13 +4,13 @@
 mail_host="smtp.mxhichina.com"     
 #邮箱服务器
 
-mail_user="wujietao@ellabook.cn"   
+mail_user="wuqqq520@qq.cn"   
 #邮箱账号
 
-mail_pass="Ella123456"             
+mail_pass="*******"             
 #邮箱密码
 
-receivers = ['wujietao@ellabook.cn','wuqqq520@qq.com']
+receivers = ['361576548@qq.com']
 #收件人
 
 subject="惆怅长岑长从"  
