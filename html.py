@@ -1,5 +1,6 @@
 # -*- coding: UTF-8 -*-
 import sendemail
+import time
 
 sample='''<tr style="background-color: {{tr_color}};color:#eeeeee;">
 <td style="text-align:center;" onclick="detailed(this)"><div style="border:1px solid #000;height:11px;width:11px;line-height:10px;display:inline-block;text-align: center;margin:0 10px;">+</div></td>
@@ -72,9 +73,8 @@ def char(s):
 
 
 def write_html(result_jscon):
-   filePath = 'test_rebo.html'
-   fileoperation = open(filePath, 'r',encoding='utf-8')
-   operation = open('rebo.html', 'r',encoding='utf-8')
+   fileoperation = open('./Template/test_rebo.html', 'r',encoding='utf-8')
+   operation = open('./Template/mail_rebo.html', 'r',encoding='utf-8')
    html_report=fileoperation.read()
    mail_report=operation.read()
    fileoperation.close()
@@ -82,8 +82,8 @@ def write_html(result_jscon):
    chardata=char(result_jscon["statistics"])
    for rt in chardata:
       html_report=html_report.replace("{{"+rt+"}}",str(chardata[rt])) 
-      
-   f=open("9999.html","w",encoding='utf-8')
+   report_file='./Test_report/'+time.strftime("%Y%m%d%H%M%S")+'.html'
+   f=open(report_file,"w",encoding='utf-8')
    
    apilist=result_jscon["apilist"]
    report_content=""
@@ -123,13 +123,7 @@ def write_html(result_jscon):
       mail_content=mail_content+mail_mould
    html_report=html_report.replace("<!-main body->",report_content) 
    mail_report=mail_report.replace("<!-main body->",mail_content) 
-   print(mail_report)
-   mail_host="smtp.mxhichina.com"
-   mail_user="wujietao@ellabook.cn" 
-   mail_pass="Ella123456"
-   receivers = ['wujietao@ellabook.cn','wuqqq520@qq.com']
-   subject="惆怅长岑长从"   
-   sendemail.sendmail(mail_host, mail_user, mail_pass, receivers, subject, mail_report)
+   sendemail.sendmail(mail_report)
    f.write(html_report)
    f.close()   
    

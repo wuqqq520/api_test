@@ -65,6 +65,6 @@ def requ_get(url,head,data):
     re=requests.get(url,headers=head,params=body)
     return re
 
-#requ(url2, head2, content)
+
 
 
