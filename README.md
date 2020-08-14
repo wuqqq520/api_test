@@ -13,7 +13,7 @@ Headers里必须包含Content-Type，它将决定请求正文的类型
 ## body/params
 为了使用例更加直观，让基础差的人可以进行读写，x-www-form-urlencoded，json，multipart/form-data都采用JSON格式进行编写
 ### 例
-###### x-www-form-urlencoded
+#### x-www-form-urlencoded
    method%3della.readeruser.getUserAttribution%26content%3d%7b%22mobile%22%3a%2213550000001%22%7d%26channelCode%3dBOE%26siteCode%3dCN
    可以写成:
    
