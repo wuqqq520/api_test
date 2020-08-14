@@ -45,6 +45,7 @@ update constant 添加更新公参，变量
 #### 例
 请求响应为:
 {"code":"0x00000000","data":{"token":"123456","uid":"U201801200052205","eboAppUserChildren":[{"cid":"ut202007132233","name":"张三"}]},"message":"【调用成功】","remark":"用户登录接口","status":"1"}
+
 "constants":{"uid":"data.uid","cid":"data.eboAppUserChildren[0].cid"}则是将U201801200052205存入变量uid中，ut202007132233存入变量cid中，如果不存在则新建
 
   [1]: http://kindergarten.ellabook.cn/f545b67327944b8a853491a5955d6e3e.png
