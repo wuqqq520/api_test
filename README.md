@@ -30,16 +30,16 @@ Headers里必须包含Content-Type，它将决定请求正文的类型
 content 为附带参数，没有就去掉content字段
 ${xxx}引用变量值,${uid}引用变量名为uid的值
 
-##update constant
+## update constant
 update constant 添加更新公参，变量
 {"common":{"uid":"data.uid","token":"data.token"},
 "constants":{"uid":"data.uid","cid":"data.eboAppUserChildren[0].cid"}}
-####common 添加或更新公参
-####例
+#### common 添加或更新公参
+#### 例
 请求响应为:
 {"code":"0x00000000","data":{"token":"123456","cid":"U201801200052205"},"message":"【调用成功】","remark":"用户登录接口","status":"1"}
 
-"common":{"uid":"data.cid","token":"data.token"}就是将公参中uid的值替换为U201801200052205、token的值替换为123456,如果公参中没有uid则在公参中添加一个uid字段值为U201801200052205，
+"common":{"uid":"data.cid","token":"data.token"}就是将公参中uid的值替换为U201801200052205、token的值替换为123456,如果公参中没有uid则在公参中添加一个uid字段值为U201801200052205
 
 
   [1]: http://kindergarten.ellabook.cn/f545b67327944b8a853491a5955d6e3e.png
